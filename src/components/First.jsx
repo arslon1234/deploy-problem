@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useEffect } from "react";
 const First = () => {
  const login =()=>{
   axios
@@ -10,6 +11,11 @@ const First = () => {
         console.log(res);
       });
  }
+ useEffect(()=>{
+  axios.get("https://jsonplaceholder.typicode.com/users").then(res=>{
+    console.log(res)
+  })
+},[])
   return (
     <div>
       <h1>First components</h1>
